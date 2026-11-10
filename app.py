@@ -7,3 +7,4 @@ def apply_discount(price, percent):
 
 
 print("Search is coming soon")
+print("DEBUG MODE ON")
