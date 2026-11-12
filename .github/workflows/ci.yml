@@ -40,3 +40,9 @@ jobs:
 
       - name: Run flake8
         run: flake8 pricing.py tests/
+  ready:
+    needs: [test, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm readiness
+        run: echo "Lint and all tests passed. Ready to merge."
