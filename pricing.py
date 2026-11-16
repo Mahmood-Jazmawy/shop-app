@@ -18,3 +18,18 @@ def add_vat(price, rate=VAT_RATE):
 def cart_total(prices):
     """Return the sum of all prices in the cart."""
     return round(sum(prices), 2)
+
+
+def apply_coupon(price, code):
+    """Apply a coupon code to a price."""
+    coupons = {
+        "WELCOME10": 10,
+        "VIP20": 20
+    }
+
+    code = code.upper()
+
+    if code not in coupons:
+        raise ValueError("Invalid coupon code")
+
+    return apply_discount(price, coupons[code])
