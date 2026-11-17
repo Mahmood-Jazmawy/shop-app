@@ -11,4 +11,3 @@ def test_shipping_cost_15_at_100():
 
 def test_shipping_cost_30_below_100():
     assert shipping_cost(99) == 30
-
