@@ -10,4 +10,3 @@ print("Search is coming soon")
 
 
 print("Checkout page")
-

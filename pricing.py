@@ -1,6 +1,5 @@
 """Price helpers for Shop App. All prices are in ILS."""
 
-
 VAT_RATE = 0.18
 
 
@@ -26,10 +25,7 @@ def cart_total(prices):
 
 def apply_coupon(price, code):
     """Apply a coupon code to a price."""
-    coupons = {
-        "WELCOME10": 10,
-        "VIP20": 20
-    }
+    coupons = {"WELCOME10": 10, "VIP20": 20}
 
     code = code.upper()
 
