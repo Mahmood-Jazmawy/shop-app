@@ -1,6 +1,10 @@
 """Price helpers for Shop App. All prices are in ILS."""
 
+
 VAT_RATE = 0.18
+
+
+FREE_SHIPPING_MIN = 200
 
 
 def apply_discount(price, percent):
@@ -33,3 +37,12 @@ def apply_coupon(price, code):
         raise ValueError("Invalid coupon code")
 
     return apply_discount(price, coupons[code])
+
+
+def shipping_cost(total):
+    """Return the shipping cost in ILS. Free from 200 ILS."""
+    if total >= FREE_SHIPPING_MIN:
+        return 0
+    if total >= 100:
+        return 15
+    return 30
