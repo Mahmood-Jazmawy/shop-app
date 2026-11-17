@@ -1,7 +1,11 @@
 """Price helpers for Shop App. All prices are in ILS."""
 
+
 VAT_RATE = 0.18
+
+
 FREE_SHIPPING_MIN = 200
+
 
 def apply_discount(price, percent):
     """Return the price after a percent discount."""
