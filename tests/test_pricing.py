@@ -1,6 +1,6 @@
 import pytest
 
-from pricing import add_vat, apply_discount, cart_total
+from pricing import add_vat, apply_discount, cart_total, loyalty_points
 
 
 def test_discount_ten_percent():
@@ -22,3 +22,15 @@ def test_add_vat():
 
 def test_cart_total():
     assert cart_total([10, 20.5, 5]) == 35.5
+
+
+def test_loyalty_points_over_500():
+    assert loyalty_points(600) == 60
+
+
+def test_loyalty_points_over_100():
+    assert loyalty_points(200) == 20
+
+
+def test_loyalty_points_100_or_less():
+    assert loyalty_points(100) == 0
